@@ -1,17 +1,17 @@
 .App {
-  display: flex;
+  display: inline;
   flex-direction: column;
   justify-content: center;
 }
 
-.information {
+/* .information {
   display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: center;
   align-items: center;
 
-}
+} */
 
 input {
   width: 300px;
@@ -46,11 +46,16 @@ input {
   margin: 10px;
   display: flex;
   padding: 10px;
-  background-color: red;
-  font-family: 'Courier New', Courier, monospace;
+  background-color: rgba(18, 221, 96, 0.68);
+  /* font-family: 'Courier New', Courier, monospace; */
+  
 }
 
 .employee h5 {
   margin: 20px;
+  display: block;
 }
 
+.editdelete{
+  display: block;
+}
