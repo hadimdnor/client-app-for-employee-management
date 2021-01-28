@@ -12,9 +12,10 @@ function Mainpage() {
     const [wage, setWage] = useState(0);
     const [newWage, setNewWage] = useState(0);
     const [employeeList, setEmployeeList] = useState([]);
-      
+    const apiDomain = window.location.hostname == "edms.surge.sh" ? "https://edms-portal.herokuapp.com" : "http://localhost:3001" 
+
     const addEmployee = () => {
-      Axios.post("http://localhost:3001/create", {
+      Axios.post(apiDomain + "/create", {
         name: name,
         staff_id: staff_id,
         age: age,
@@ -41,7 +42,7 @@ function Mainpage() {
    
     const getEmployees = () => {
       Axios
-        .get("http://localhost:3001/employees")
+        .get(apiDomain + "/employees")
         .then((response)=>{
           setEmployeeList(response.data.rows)
          
@@ -50,7 +51,7 @@ function Mainpage() {
   
     const updateEmployeeWedge = (id) => {
       Axios
-       .put("http://localhost:3001/update",{ wage: newWage, id: id})
+       .put(apiDomain + "/update",{ wage: newWage, id: id})
        .then((response)=>{
          console.log(response)
          setEmployeeList(employeeList.map((val)=>{
@@ -74,7 +75,7 @@ function Mainpage() {
   
     const deleteEmployee = (id) => {
       Axios
-        .delete(`http://localhost:3001/delete/${id}`)
+        .delete(`${apiDomain}/delete/${id}`)
         .then((response)=> {
           setEmployeeList(employeeList.filter((val)=>{
             return val.id != id    
