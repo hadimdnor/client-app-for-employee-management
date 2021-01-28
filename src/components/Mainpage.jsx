@@ -164,19 +164,21 @@ function Mainpage() {
               <h5>Age: {val.age}</h5> 
               <h5>Email: {val.email}</h5> 
               <h5>Position: {val.position}</h5> 
-              <h5>Department: {val.Department}</h5> 
+              <h5>Department: {val.department}</h5> 
               <h5>Wage(yearly): {val.wage}</h5> 
               </div>
               
-              <div className="editdelete">
-                  <input type="text"placeholder="update wage" 
-                  onChange={(event) => {
-                    setNewWage(event.target.value);
-                  }}/>
-                  <button onClick={()=>{updateEmployeeWedge(val.id)}}>Update</button>
+              <article>
+                <input type="text"placeholder="update wage" 
+                    onChange={(event) => {
+                      setNewWage(event.target.value);
+                    }}/>
+                    <button onClick={()=>{updateEmployeeWedge(val.id)}}>Update</button>
 
-                  <button onClick={()=>{deleteEmployee(val.id)}}>Delete</button>
-              </div>
+                    <button onClick={()=>{deleteEmployee(val.id)}}>Delete</button>
+            </article>
+                    
+            
             </div> )
           })}
       </div>     
