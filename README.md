@@ -1,5 +1,4 @@
-Application : Employee Database Management System 
-(EDMS)
+
 
 # Application : Employee Database Management System 
 (EDMS)
